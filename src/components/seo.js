@@ -1,7 +1,7 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
+import React from "react"
+import Helmet from "react-helmet"
+import PropTypes from "prop-types"
+import { StaticQuery, graphql } from "gatsby"
 
 const query = graphql`
   query GetSiteMetadata {
@@ -17,96 +17,96 @@ const query = graphql`
       }
     }
   }
-`;
+`
 
-function SEO({ meta, image, title, description, slug, lang = 'en' }) {
+function SEO({ meta, image, title, description, slug, lang = "en" }) {
   return (
     <StaticQuery
       query={query}
       render={data => {
-        const { siteMetadata } = data.site;
-        const metaDescription = description || siteMetadata.description;
-        const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : null;
-        const url = `${siteMetadata.siteUrl}${slug}`;
+        const { siteMetadata } = data.site
+        const metaDescription = description || siteMetadata.description
+        const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : null
+        const url = `${siteMetadata.siteUrl}${slug}`
         return (
           <Helmet
             htmlAttributes={{ lang }}
             {...(title
               ? {
                   titleTemplate: `%s — ${siteMetadata.title}`,
-                  title,
+                  title
                 }
               : {
-                  title: `${siteMetadata.title} — A blog by Dan Abramov`,
+                  title: `${siteMetadata.title} — A blog by Dan Abramov`
                 })}
             meta={[
               {
-                name: 'description',
-                content: metaDescription,
+                name: "description",
+                content: metaDescription
               },
               {
-                property: 'og:url',
-                content: url,
+                property: "og:url",
+                content: url
               },
               {
-                property: 'og:title',
-                content: title || siteMetadata.title,
+                property: "og:title",
+                content: title || siteMetadata.title
               },
               {
-                property: 'og:description',
-                content: metaDescription,
+                property: "og:description",
+                content: metaDescription
               },
               {
-                name: 'twitter:card',
-                content: 'summary',
+                name: "twitter:card",
+                content: "summary"
               },
               {
-                name: 'twitter:creator',
-                content: siteMetadata.social.twitter,
+                name: "twitter:creator",
+                content: siteMetadata.social.twitter
               },
               {
-                name: 'twitter:title',
-                content: title || siteMetadata.title,
+                name: "twitter:title",
+                content: title || siteMetadata.title
               },
               {
-                name: 'twitter:description',
-                content: metaDescription,
-              },
+                name: "twitter:description",
+                content: metaDescription
+              }
             ]
               .concat(
                 metaImage
                   ? [
                       {
-                        property: 'og:image',
-                        content: metaImage,
+                        property: "og:image",
+                        content: metaImage
                       },
                       {
-                        name: 'twitter:image',
-                        content: metaImage,
-                      },
+                        name: "twitter:image",
+                        content: metaImage
+                      }
                     ]
                   : []
               )
               .concat(meta)}
           />
-        );
+        )
       }}
     />
-  );
+  )
 }
 
 SEO.defaultProps = {
   meta: [],
-  title: '',
-  slug: '',
-};
+  title: "",
+  slug: ""
+}
 
 SEO.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   meta: PropTypes.array,
   slug: PropTypes.string,
-  title: PropTypes.string.isRequired,
-};
+  title: PropTypes.string.isRequired
+}
 
-export default SEO;
+export default SEO

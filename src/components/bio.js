@@ -1,14 +1,14 @@
-import React from 'react';
-import profilePic from '../assets/profile-pic.jpg';
-import { rhythm } from '../utils/typography';
+import React from "react"
+import profilePic from "../assets/profile-pic.jpg"
+import { rhythm } from "../utils/typography"
 
 class Bio extends React.Component {
-  render () {
+  render() {
     return (
       <div
         style={{
-          display: 'flex',
-          marginBottom: rhythm(2),
+          display: "flex",
+          marginBottom: rhythm(2)
         }}
       >
         <img
@@ -19,7 +19,7 @@ class Bio extends React.Component {
             marginBottom: 0,
             width: rhythm(2),
             height: rhythm(2),
-            borderRadius: '50%',
+            borderRadius: "50%"
           }}
         />
         <div>
@@ -27,8 +27,8 @@ class Bio extends React.Component {
           <p style={{ maxWidth: 310 }}>死磕前端，偶尔写点东西。</p>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Bio;
+export default Bio
