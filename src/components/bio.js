@@ -1,58 +1,34 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import React from 'react';
+import profilePic from '../assets/profile-pic.jpg';
+import { rhythm } from '../utils/typography';
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-
-const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
-
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
-
-  return (
-    <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["AUTO", "WEBP", "AVIF"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
-        quality={95}
-        alt="Profile picture"
-      />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
-      )}
-    </div>
-  )
+class Bio extends React.Component {
+  render () {
+    return (
+      <div
+        style={{
+          display: 'flex',
+          marginBottom: rhythm(2),
+        }}
+      >
+        <img
+          src={profilePic}
+          alt={`Dan Abramov`}
+          style={{
+            marginRight: rhythm(1 / 2),
+            marginBottom: 0,
+            width: rhythm(2),
+            height: rhythm(2),
+            borderRadius: '50%',
+          }}
+        />
+        <div>
+          一枚软件开发人员。
+          <p style={{ maxWidth: 310 }}>死磕前端，偶尔写点东西。</p>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Bio
+export default Bio;
