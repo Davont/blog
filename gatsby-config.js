@@ -12,6 +12,7 @@ const gatsbyConfig = {
   siteMetadata: { title, description, author, siteUrl, language },
 
   plugins: [
+    `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-typescript`,
 
     `gatsby-plugin-react-helmet`,
@@ -23,8 +24,6 @@ const gatsbyConfig = {
     `gatsby-transformer-sharp`,
 
     `gatsby-plugin-sharp`,
-
-    `gatsby-plugin-gatsby-cloud`,
 
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
