@@ -29,7 +29,7 @@ const gatsbyConfig = {
     //   options: {
     //     trackingId: googleAnalytics,
     //   },
-    // },
+    // }
 
     {
       resolve: `gatsby-source-filesystem`,
