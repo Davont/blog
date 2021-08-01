@@ -1,7 +1,8 @@
 ---
 title: Draft
 date: 1991-03-24
-tags: - ts
+tags:
+  - ts
 ---
 
 ## doc
