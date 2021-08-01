@@ -12,7 +12,6 @@ const gatsbyConfig = {
   siteMetadata: { title, description, author, siteUrl, language },
 
   plugins: [
-    `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-typescript`,
 
     `gatsby-plugin-react-helmet`,

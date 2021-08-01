@@ -4,7 +4,7 @@ module.exports = {
   description: `Blog Description`, // (* Required)
   author: `Author`, // (* Required)
   language: 'ko-KR', // (* Required) html lang, ex. 'en' | 'en-US' | 'ko' | 'ko-KR' | ...
-  siteUrl: 'https://blogmain80047.gatsbyjs.io', // (* Required)
+  siteUrl: 'https://davontt.com', // (* Required)
   // ex.'https://junhobaik.github.io'
   // ex.'https://junhobaik.github.io/' << X, Do not enter "/" at the end.
 
